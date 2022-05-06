@@ -22,3 +22,6 @@ se #0.2774726
 
 # Part g)
 c(beta - 1.645 * se, beta + 1.645 * se) #(29.16596, 30.07885)
+
+
+#GitHub Repository Link: https://github.com/Michelle1383/Econ21020.git
