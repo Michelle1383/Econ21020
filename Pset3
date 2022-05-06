@@ -1,0 +1,24 @@
+# Pset 3 Problem 6
+
+# Part a)
+df <- read.csv("/Users/michelleyang/Downloads/ak91.csv")
+n <- nrow(df)
+yrs_educ <- df$YRS_EDUC
+wkly_wage <- df$WKLY_WAGE 
+beta <- cov(wkly_wage, yrs_educ) / var(yrs_educ)
+alpha <- mean(wkly_wage) - mean(yrs_educ) * beta
+beta #29.6224
+alpha #61.19537
+
+# Part c)
+blp_yx <- alpha + 16 * beta
+blp_yx #535.1538
+
+# Part d)
+epsilon <- yrs_educ - blp_yx
+se_numer <- sqrt(mean(epsilon^2 * (yrs_educ - mean(yrs_educ))^2))
+se <- (se_numer / var(yrs_educ)) / sqrt(n)
+se #0.2774726
+
+# Part g)
+c(beta - 1.645 * se, beta + 1.645 * se) #(29.16596, 30.07885)
