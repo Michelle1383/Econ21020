@@ -1,0 +1,18 @@
+#Problem Set 4
+
+#Problem 6
+
+#a)
+dat <- read.csv("/Users/michelleyang/Downloads/bw06.csv")
+dat <- as.matrix(dat)
+y <- dat[, "birthweight"]
+w <- dat[, "cigsdaily"]
+x <- cbind(1, dat[, c("boy", "age", "highschool", "somecollege", "college")])
+x_tld <- dat[, "married"]
+beta <- cov(y, w) / var(w)
+alpha <- mean(y) - mean(w) * beta
+
+#b)
+beta_w <- cov(w, y) / var(w)
+
+#GitHub Repository Link: https://github.com/Michelle1383/Econ21020.git
